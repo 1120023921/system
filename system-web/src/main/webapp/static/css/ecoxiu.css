@@ -1,0 +1,225 @@
+/*
+* @Author: HuXiaoHui
+* @Date:   2017-11-29 15:26:26
+* @Last Modified by:   HuXiaoHui
+* @Last Modified time: 2017-11-29 15:26:38
+*/
+#met-imgs-carousel .slick-dots li.slick-active {
+    border-color: #014099
+}
+
+.less-link:hover {
+    color: #014099
+}
+
+.dropdown-menu > li > a:hover, .met-nav .dropdown.open > a, .slick-arrow:hover {
+    color: #014099 !important
+}
+
+.met-column-nav .met-column-nav-ul > li a.link.active, .met-column-nav .met-column-nav-ul > li a.link:hover {
+    color: #014099
+}
+
+.met-column-nav .met-column-nav-ul > li > ul > li > a.active {
+    color: #014099 !important
+}
+
+.input-search-btn:focus i, .met-download .met-download-list h4.media-heading a:hover, .met-footnav h4 a:hover, .met-footnav ul li a:hover, .met-job .widget .widget-title a:hover, .met-news ul.met-page-ajax li h4 a:hover, .met-news-bar .recommend .list-group a:hover, .met-news-bar ul.column li a:hover, .met-news.type-3 .widget .widget-title a:hover, .met-product.type-1 h4 a:hover, .met-showproduct.pagetype1 .met-showproduct-body .product-hot .mob-masonry a.txt:hover, .met-showproduct.pagetype2 nav.navbar .navbar-right li.active a, a:hover {
+    color: #014099
+}
+
+.btn-success, .btn-success:focus, .btn-success:hover {
+    border-color: #014099
+}
+
+.btn-success {
+    background: #014099;
+    border-color: #014099;
+}
+
+.btn-outline.btn-default, .btn-outline.btn-primary, .btn-primary {
+    background: #7d7d7d !important;
+    border-color: #7d7d7d !important
+}
+
+.ladda-button:hover {
+    background: #014099 !important
+}
+
+.shop-product-intro .btn-outline.btn-danger, .shop-product-intro .btn-outline.btn-danger:hover {
+    color: #014099 !important;
+    border-color: #014099 !important
+}
+
+.breadcrumb > li a, .breadcrumb > li + li:before, .met-column-nav ul.met-column-nav-ul > li a.link.active, .met-column-nav ul.met-column-nav-ul > li a.link:hover, .met-news-bar ul.column li a.active, .pager li > a:focus, .pager li > a:hover {
+    color: #014099
+}
+
+.shop-product-intro .purchase-btn .btn-primary {
+    background: #014099 !important;
+    border-color: #014099 !important
+}
+
+.checkbox-primary input[type=checkbox]:checked + label::before, .checkbox-primary input[type=radio]:checked + label::before, .form-control.focus, .form-control:focus, .pager li > a:focus, .pager li > a:hover, .radio-primary input[type=radio]:checked + label::before {
+    border-color: #014099
+}
+
+.checkbox-primary input[type=checkbox]:checked + label::before, .checkbox-primary input[type=radio]:checked + label::before, .modal-primary .modal-header {
+    background: #014099
+}
+
+.checkbox-custom input[type=checkbox]:focus + label::before, .checkbox-custom input[type=radio]:focus + label::before, .radio-custom input[type=radio]:focus + label::before {
+    outline-color: #014099
+}
+
+.nav-tabs-line > li.active > a, .nav-tabs-line > li.active > a:focus, .nav-tabs-line > li.active > a:hover {
+    color: #014099;
+    border-bottom-color: #014099
+}
+
+.lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover, .met-showproduct.pagetype1 .met-showproduct-head .ad-gallery .ad-thumbs li a.ad-active img {
+    border-color: #014099 !important
+}
+
+.met-nav .econav button {
+    border: 0 solid #014099
+}
+
+#mobileNav li.active, #mobileNav li:hover, .topbar .met-nav-right-shop li.dropdown > a:hover, .topbar .met-nav-right-shop li.open > a {
+    background: #014099
+}
+
+@media (min-width: 768px) {
+    .met-nav .dropdown-menu li > a.active, .met-nav .dropdown-menu li > a.focus, .met-nav .dropdown-menu li > a:hover {
+        color: #014099 !important
+    }
+
+    .met-nav .mega-content h5 a {
+        color: #014099
+    }
+}
+
+.topbar .social ul.social-icons li:hover a {
+    color: #014099
+}
+
+.topbar .met-nav-login .btn:hover {
+    background: #014099 !important;
+    border-color: transparent !important;
+}
+
+.ecofootbg .met-footnav .info i, .ecofootbg .met-footnav h4:before, .ecofootbg .met-footnav-eco h4:before, .main-slider .banner-btn:before, .met-banner, .met-banner .econynr .container .row .title h1:before, .met-banner .econynr .container .row .title h2:before, .met-index-body h3 a:after {
+    background: #014099
+}
+
+@media (min-width: 768px) {
+    .met-nav .met-nav-login .dropdown-menu li a:hover, .met-nav .met-nav-right-shop .dropdown-menu li a:hover {
+        color: #014099 !important
+    }
+}
+
+@media (max-width: 767px) {
+    #mobileNav .met-nav-right-shop li.dropdown .dropdown-menu li a:hover, #mobileNav .met-nav-right-shop li.dropdown:hover > a, .met-nav .met-nav-login .dropdown-menu li a:hover, .met-nav .met-nav-right-shop .dropdown-menu li a:hover {
+        color: #014099 !important
+    }
+}
+
+.ecofootbg .met-footnav em a:hover, .ecofootbg .met-footnav ul a:hover, .ecofootbg .met-links a:focus, .ecofootbg .met-links a:hover {
+    color: #014099
+}
+
+.met-banner {
+    position: relative;
+}
+
+.ecofootbg .met-langlist:hover button {
+    border-color: #014099 !important;
+    color: #014099 !important
+}
+
+.ecofootbg .met-langlist .modal-content a.btn:hover {
+    color: #014099 !important
+}
+
+.ecofootbg .met-footnav-eco .list a.read-more:hover {
+    color: #014099
+}
+
+.ecofootbg .met-footnav-eco .list .social li a {
+    border: 1px solid #014099;
+    color: #014099
+}
+
+.ecofootbg .met-footnav-eco .contact-info li .icon, .ecofootbg .met-footnav-eco .ecoinfo ul li a:hover, .ecofootbg .met-footnav-eco .list .social li:hover a {
+    color: #014099
+}
+
+.met-index-service .project-item .project-intro .service-more .button:hover {
+    background-color: #014099
+}
+
+.met-index-service .project-item .project-intro .project-title:before {
+    border: 1px solid #014099;
+}
+
+.met-index-product .owl-nav .owl-next:hover, .met-index-product .owl-nav .owl-prev:hover {
+    background: #014099
+}
+
+.met-index-product .project-item .project-intro .project-title:before {
+    border: 1px solid #014099
+}
+
+.met-index-case .blocks h4 a:hover {
+    color: #014099
+}
+
+.eco-leftnav .met-all-bar h4:before, .ecoxiu-online ul.blocks, .met-index-cases .owl-dots > div.active > span, .met-index-cases .owl-dots > div:hover > span, .met-index-cases .owl-nav .owl-next:hover, .met-index-cases .owl-nav .owl-prev:hover, .met-index-news .single-blog-post .img-holder:before, .met-news.type-4 .widget .widget-body a.read-more, .met-news.type-4 .widget .widget-header .overlay:before {
+    background: #014099
+}
+
+.met-index-news .single-blog-post a h2:hover, .met-index-news .single-blog-post ul li a:hover {
+    color: #014099
+}
+
+.met-img .type-1 .widget-body h3.widget-title a:hover, .met-product.type-4 h4.widget-title a:hover {
+    color: #014099
+}
+
+.met-img .type-2 .thumb-image-hover .link-gallery:hover, .met-img .type-2 .thumb-image-hover .thumb-image:hover {
+    color: #014099;
+    border-color: #014099
+}
+
+.met-news.type-4 .widget .widget-body .post-meta .date-holder {
+    color: #014099
+}
+
+.met-news.type-4 .widget .widget-title a:hover {
+    color: #014099
+}
+
+.righttel a, .righttel a .icon {
+    color: #014099
+}
+
+.eco-leftnav .met-all-bar button:hover {
+    background: #014099
+}
+
+.eco-leftnav .met-all-bar .category_item li a:focus, .eco-leftnav .met-all-bar .category_item li a:hover, .eco-leftnav .met-all-bar .category_item li ul li a.active, .eco-leftnav .met-all-bar .product_item .single_product_item a {
+    color: #014099
+}
+
+.eco-leftnav .met-all-bar .post_item li a.title {
+    color: #014099
+}
+
+.eco-leftnav .met-all-bar .clouds li a:focus, .eco-leftnav .met-all-bar .clouds li a:hover, .eco-leftnav .section-title-style h2:before {
+    background: #014099
+}
+
+.met_pager a.Ahover, .met_pager a.Ahover:hover {
+    border-color: #014099;
+    background: #014099;
+}

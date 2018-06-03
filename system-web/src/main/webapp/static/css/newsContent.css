@@ -1,0 +1,23 @@
+.title{
+	margin-top: 2%;
+	font-size: 1.8em;
+}
+
+.time{
+	margin-top: 3%;
+	margin-bottom: 3%;
+	color: #808080;
+}
+
+.contentt{
+	margin-top: 5%;
+	margin-bottom: 3%;
+	color: #676767;
+	font-family:微软雅黑;
+	font-size:1.1em;
+}
+
+.line{
+	margin-top: 1%;
+	border:1px solid #e0e0e0;
+}

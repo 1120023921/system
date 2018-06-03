@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<description>spring-shiro配置</description>
+
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager"/>
+		<property name="successUrl" value="/index"/>
+		<property name="loginUrl" value="/renderLogin.do" /> <!-- 认证提交地址 要求登录界面，默认为login.jsp -->
+		<property name="unauthorizedUrl" value="/403.do" /> <!-- 拒绝访问界面 -->
+		<property name="filterChainDefinitions">
+			<value>
+				/static/** =anon
+				/renderLogin**=anon
+				/login** = anon
+				/403.do =anon
+				/logout.do=logout
+				/** =authc
+			</value>
+		</property>
+	</bean>
+
+	<!-- 缓存管理器 使用Ehcache实现 -->
+	<!--<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">-->
+		<!--<property name="cacheManagerConfigFile" value="classpath:shiro-ehcache.xml"/>-->
+	<!--</bean>-->
+
+	<!-- 配置shiro redisManager -->
+	<bean id="redisManager" class="org.crazycake.shiro.RedisManager">
+		<property name="host" value="${redis.host}"></property>
+		<property name="port" value="${redis.port}"></property>
+		<property name="expire" value="1800"></property>
+	</bean>
+
+	<!-- cacheManager 缓存 redis实现 -->
+	<bean id="cacheManager" class="org.crazycake.shiro.RedisCacheManager">
+		<property name="redisManager" ref="redisManager"></property>
+	</bean>
+
+	<!-- RedisSessionDAO shiro sessionDao层的实现 通过redis -->
+	<bean id="redisSessionDAO" class="org.crazycake.shiro.RedisSessionDAO">
+		<property name="redisManager" ref="redisManager"></property>
+	</bean>
+
+	<!-- Session Manager(redis) -->
+	<bean id="sessionManager-redis" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+		<property name="sessionDAO" ref="redisSessionDAO"></property>
+	</bean>
+
+	<!-- 会话DAO -->
+	<!--<bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.MemorySessionDAO"/>-->
+
+	<!-- 会话管理器 -->
+	<!--<bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">-->
+		<!--<property name="sessionDAO" ref="sessionDAO"/>-->
+		<!--<property name="globalSessionTimeout" value="1800000" />-->
+		<!--<property name="deleteInvalidSessions" value="true" />-->
+		<!--<property name="sessionIdUrlRewritingEnabled" value="false" />-->
+		<!--<property name="sessionValidationScheduler" ref="sessionValidationScheduler" />-->
+	<!--</bean>-->
+
+	<!-- 调度器 -->
+	<bean id="sessionValidationScheduler"
+		  class="cn.doublehh.base.QuartzSessionValidationScheduler">
+		<property name="sessionValidationInterval" value="900000" />
+		<property name="sessionManager" ref="sessionManager-redis" />
+	</bean>
+
+	<bean id="securityRealm" class="cn.doublehh.system.security.realm.SimpleRealm" />
+
+	<!-- 安全管理器 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realms">
+			<list>
+				<ref bean="securityRealm"/>
+			</list>
+		</property>
+		<!--<property name="cacheManager" ref="shiroEhcacheManager"></property>-->
+		<property name="cacheManager" ref="cacheManager"></property>
+		<!--<property name="sessionManager" ref="sessionManager"></property>-->
+		<property name="sessionManager" ref="sessionManager-redis"></property>
+	</bean>
+
+	<!-- Shiro生命周期处理器 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+	<!-- 启用shrio授权注解拦截方式 -->
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager"/>
+	</bean>
+</beans>

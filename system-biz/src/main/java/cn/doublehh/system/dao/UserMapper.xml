@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.doublehh.system.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="cn.doublehh.system.model.User" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="mail" property="mail" jdbcType="VARCHAR" />
+    <result column="enabled" property="enabled" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="UserWithRolesMap" type="cn.doublehh.system.model.User" extends="BaseResultMap">
+    <collection property="roles" resultMap="cn.doublehh.system.dao.RoleMapper.BaseResultMap" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, uid, name, sex, tel, mail, enabled, create_date, update_date, create_by, update_by, 
+    remark, password
+  </sql>
+
+  <select id="getUserByUid" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    *
+    from t_s_user where uid=#{uid}
+  </select>
+  <select id="getUserWithRolesByUid" resultMap="UserWithRolesMap" parameterType="java.lang.String">
+    select
+    *
+    from t_s_user t1,t_s_role t2,t_s_user_role t3 where t1.id=t3.user_id and t2.id=t3.role_id and t1.uid=#{uid}
+  </select>
+  <select id="getUsersByRoleId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    *
+    from t_s_user t1,t_s_user_role t2 where t1.id=t2.user_id and t2.role_id=#{roleId}
+  </select>
+
+  <select id="getSerach" resultMap="BaseResultMap">
+    select * from t_s_user where name LIKE CONCAT(CONCAT('%', #{key}), '%') OR uid LIKE CONCAT(CONCAT('%', #{key}), '%')
+  </select>
+</mapper>
