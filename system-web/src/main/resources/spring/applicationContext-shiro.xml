@@ -43,7 +43,7 @@
     <!-- RedisSessionDAO shiro sessionDao层的实现 通过redis -->
     <bean id="redisSessionDAO" class="org.crazycake.shiro.RedisSessionDAO">
         <property name="redisManager" ref="redisManager"></property>
-        <property name="expire" value="10000"></property>
+        <property name="expire" value="1800"></property>
     </bean>
 
     <!-- Session Manager(redis) -->
