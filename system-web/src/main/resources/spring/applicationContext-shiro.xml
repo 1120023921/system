@@ -32,7 +32,6 @@
     <bean id="redisManager" class="org.crazycake.shiro.RedisManager">
         <property name="host" value="${redis.host}"></property>
         <property name="port" value="${redis.port}"></property>
-
     </bean>
 
     <!-- cacheManager 缓存 redis实现 -->
